@@ -8115,6 +8115,7 @@ BrowserDictionaryLoader.prototype = Object.create(DictionaryLoader.prototype);
  */
 BrowserDictionaryLoader.prototype.loadArrayBuffer = function (url, callback) {
     var xhr = new XMLHttpRequest();
+    url = url.replace('https:/cdn', 'https://cdn');  /** appended by Sato */
     xhr.open("GET", url, true);
     xhr.responseType = "arraybuffer";
     xhr.onload = function () {
